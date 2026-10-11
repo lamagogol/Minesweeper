@@ -1,11 +1,11 @@
 import "./App.css";
-import Grid from "./logic/Grid";
+import Board from "./components/Board";
 
 function App() {
 
     return (
         <>
-		<Grid height='10' width='10' mines='10'></Grid>
+		<Board height='10' width='10' mines='10'></Board>
         </>
     );
 }
