@@ -20,7 +20,8 @@ const Board = (props) => {
                 <div key={index1} className="minesweeper__row">
                     { row.map((cell, index2) => (
                         <Cell key={index2} state={cellState[index1][index2]} value={cell}
-                        reveal={() => reveal(index1, index2)} flag={() => setCellState(putInGrid(cellState, index1, index2, flag(cellState[index1][index2])))}></Cell>
+                        reveal={() => setCellState(reveal(grid, cellState, index1, index2))}
+                        flag={() => setCellState(putInGrid(cellState, index1, index2, flag(cellState[index1][index2])))}></Cell>
                     ))}
                 </div>
             )) }
