@@ -1,15 +1,15 @@
 
 
 function reveal(grid, cellState, index1, index2) {
+    console.log('PLEASE')
     if (grid[index1][index2] != 0 && cellState[index1][index2] == "hidden") {
         const next = cellState.map(row => [...row]);
         next[index1][index2] = 'open';
         return (next)
     }
-    else if (grid[index1][index2] == 0 && cellState[index1][index2] == "hidden") {
+    else if (grid[index1][index2] == 0 && (cellState[index1][index2] == "hidden")) {
         let final = cellState.map(row => [...row]);
         final[index1][index2] = "open";
-        console.log(final)
         let lenGrid = grid.length;
         let lenRow = grid[0].length;
         for (let w = Math.max(0, index1 - 1); w <= Math.min(lenGrid - 1, index1 + 1); w++) {
